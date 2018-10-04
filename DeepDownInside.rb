@@ -24,7 +24,7 @@ end
 #end
 
 $geometryAbst=[Sketchup::Face,Sketchup::Edge,Sketchup::Image]
-$containerAbst=[Sketchup::Group,Sketchup::ComponentInstance,Sketchup::ComponentDefinition,Sketchup::Model,Sketchup::Selection,,Sketchup::Entities]
+$containerAbst=[Sketchup::Group,Sketchup::ComponentInstance,Sketchup::ComponentDefinition,Sketchup::Model,Sketchup::Selection,Sketchup::Entities]
 $guideAbstr=[Sketchup::ConstructionPoint,Sketchup::ConstructionLine]
 $infoViewAbstr=[Sketchup::SectionPlane,Sketchup::Text,Sketchup::Dimension]
 
