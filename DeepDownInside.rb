@@ -1,5 +1,11 @@
+$geometryAbst=[Sketchup::Face,
+Sketchup::Edge,
+Sketchup::Image]
+$containerAbst=[Sketchup::Group,Sketchup::ComponentInstance,Sketchup::ComponentDefinition,Sketchup::Model,Sketchup::Selection,Sketchup::Entities]
+$guideAbstr=[Sketchup::ConstructionPoint,Sketchup::ConstructionLine]
+$infoViewAbstr=[Sketchup::SectionPlane,Sketchup::Text,Sketchup::Dimension]
+
 def hasEntitiesMethod(o)
-  
   return (o.class.method_defined? :"entities")
 end
 
@@ -23,10 +29,7 @@ end
 #  end
 #end
 
-$geometryAbst=[Sketchup::Face,Sketchup::Edge,Sketchup::Image]
-$containerAbst=[Sketchup::Group,Sketchup::ComponentInstance,Sketchup::ComponentDefinition,Sketchup::Model,Sketchup::Selection,Sketchup::Entities]
-$guideAbstr=[Sketchup::ConstructionPoint,Sketchup::ConstructionLine]
-$infoViewAbstr=[Sketchup::SectionPlane,Sketchup::Text,Sketchup::Dimension]
+
 
 def isClassCategory(ent, arrOfClasses)
   return arrOfClasses.index(ent.class)!=nil
@@ -117,3 +120,13 @@ def _iterateThroughChildren(ent,resArr)
   end
   return resArr
 end
+
+def getSelection()
+   mod = Sketchup.active_model # Open model
+  sel = mod.selection # Current selection
+end
+  
+  def getLeafNodesOfCurrentSelection()
+    return iterateThroughChildren(getSelection())
+  end
+  
